@@ -10,7 +10,7 @@ export class LivroAdapter {
       publishedDate: dto.volumeInfo?.publishedDate,
       description: dto.volumeInfo?.description,
       previewLink: dto.volumeInfo?.infoLink,
-      thumbnail: dto.volumeInfo?.imageLinks.thumbnail,
+      thumbnail: dto.volumeInfo?.imageLinks?.thumbnail,
     };
   }
 }

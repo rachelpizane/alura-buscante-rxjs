@@ -19,13 +19,13 @@ export class LivroService {
       .set('q', valor)
 
     return this.http.get<ItensLivrosResultado>(this.api, { params }).pipe(
-      tap((resposta: ItensLivrosResultado) => {
-        console.log('Resposta da API (1º tap):', resposta);
-      }),
+      // tap((resposta: ItensLivrosResultado) => {
+      //   console.log('Resposta da API (1º tap):', resposta);
+      // }),
       map(resultado => resultado.items),
-      tap((itens: ItemLivro[]) => {
-        console.log('Itens retornados: (2º tap)', itens);
-      }),
+      // tap((itens: ItemLivro[]) => {
+      //   console.log('Itens retornados: (2º tap)', itens);
+      // }),
       map((itens: ItemLivro[]) => {
         return itens.map(item => (LivroAdapter.fromDto(item)));
       })
