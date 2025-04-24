@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Livro } from 'src/app/interfaces/livro';
 import { LivroService } from 'src/app/service/livro/livro.service';
 
 @Component({
@@ -11,14 +12,13 @@ import { LivroService } from 'src/app/service/livro/livro.service';
 export class ListaLivrosComponent implements OnDestroy {
   campoBusca!: string;
   subscricao!: Subscription;
-
-  listaLivros: [];
+  listaLivros: Livro[] = []
 
   constructor(private livroService: LivroService) { }
 
   buscarLivros(): void {
     this.subscricao = this.livroService.buscar(this.campoBusca).subscribe({
-      next: (livros: any) => console.log(livros.items),
+      next: (livros: any) => this.listaLivros = livros,
       error: erro => console.error(erro),
       complete: () => console.log('Requisição completa')
     });
