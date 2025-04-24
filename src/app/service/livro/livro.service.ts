@@ -1,10 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
-import { LivroAdapter } from 'src/app/adapter/livro.adapter';
-import { ItemLivro } from 'src/app/interfaces/item-livro';
-import { ItensLivrosResultado } from 'src/app/interfaces/itens-livros-resultado';
-import { Livro } from 'src/app/interfaces/livro';
+import { LivroAdapter } from 'src/app/moldes/adapter/livro.adapter';
+import { ItemLivro } from 'src/app/moldes/interfaces/item-livro';
+import { ItensLivrosResultado } from 'src/app/moldes/interfaces/itens-livros-resultado';
+import { Livro } from 'src/app/moldes/interfaces/livro';
 
 @Injectable({
   providedIn: 'root'

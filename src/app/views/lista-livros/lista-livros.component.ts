@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Livro } from 'src/app/interfaces/livro';
+import { Livro } from 'src/app/moldes/interfaces/livro';
 import { LivroService } from 'src/app/service/livro/livro.service';
 
 @Component({

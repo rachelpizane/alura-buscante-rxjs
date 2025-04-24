@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Livro } from 'src/app/interfaces/livro';
+import { Livro } from 'src/app/moldes/interfaces/livro';
 
 @Component({
   selector: 'app-livro',
