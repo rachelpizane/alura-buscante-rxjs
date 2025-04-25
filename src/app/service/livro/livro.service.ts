@@ -14,21 +14,10 @@ export class LivroService {
 
   constructor(private http: HttpClient) { }
 
-  buscar(valor: string): Observable<Livro[]> {
+  buscar(valor: string): Observable<ItensLivrosResultado> {
     const params = new HttpParams()
       .set('q', valor)
 
-    return this.http.get<ItensLivrosResultado>(this.api, { params }).pipe(
-      // tap((resposta: ItensLivrosResultado) => {
-      //   console.log('Resposta da API (1º tap):', resposta);
-      // }),
-      map(resultado => resultado.items),
-      // tap((itens: ItemLivro[]) => {
-      //   console.log('Itens retornados: (2º tap)', itens);
-      // }),
-      map((itens: ItemLivro[]) => {
-        return itens.map(item => (LivroAdapter.fromDto(item)));
-      })
-    );
+    return this.http.get<ItensLivrosResultado>(this.api, { params });
   }
 }

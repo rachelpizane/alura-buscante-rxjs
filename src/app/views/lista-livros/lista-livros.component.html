@@ -10,8 +10,12 @@
   <div class="resultados mesangem-erro" *ngIf="mensagemErro">
     {{mensagemErro}}
   </div>
-  <div class="container-card" *ngIf="livrosEncontrados$ | async as listaLivros, else telaInicial">
-    <div *ngFor="let livro of listaLivros">
+  <div class="resultados" *ngIf="resultadoEncontrado$ | async as resultadoEncontrado">
+    <p>{{ resultadoEncontrado.totalItems }} resultado(s) encontrado(s)</p>
+  </div>
+
+  <div class="container-card" *ngIf="resultadoEncontrado$ | async as resultadoEncontrado, else telaInicial">
+    <div *ngFor="let livro of resultadoEncontrado.livros">
       <app-livro [livro]="livro"></app-livro>
     </div>
   </div>
